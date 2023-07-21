@@ -1,0 +1,117 @@
+/*
+  담당자 : 박신욱
+  주요 기능 : [대쉬보드] - 장소 목록 CSS
+*/
+.addressList {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.addressListHeader {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.addressListLeft {
+    display: flex;
+    align-items: center;
+}
+
+.addressListCount {
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b5ac2;
+}
+
+.addressListLeft > i {
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    /* background-color: rgba(155, 155, 250, 0.5); */
+    background-color: rgba(190, 205, 255, 0.502);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.addressCardList {
+    height: 34vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addressCardList:hover {
+    overflow-y: auto;
+}
+
+/* scrollbar custom */
+.addressCardList::-webkit-scrollbar {
+    width: var(--webkit-scrollbar-width);
+  }
+  .addressCardList::-webkit-scrollbar-thumb {
+    background-color: var(--webkit-scrollbar-thumb-bg);
+    border-radius: var(--webkit-scrollbar-thumb-br);
+  }
+  .addressCardList::-webkit-scrollbar-track {
+    background-color: var(--webkit-scrollbar-track-bg);
+    border-radius: var(--webkit-scrollbar-track-br);
+  }
+
+.addressListLeft > .addressListHeaderTitle {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.addressListHeader > .fa-solid.fa-rotate-right {
+    font-size: 20px;
+}
+
+.addressListHeader > .fa-solid.fa-rotate-right:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.addressCard {
+    width: 90%;
+    min-height: 25%;
+    max-height: fit-content;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 2px 2px #dadada;
+}
+
+.addressCard:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.addressCardHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.addressCardHeader > .cardInfo {
+    display: flex;
+    column-gap: 10px;
+}
+.addressCardHeader > .cardInfo > .cardAddress {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.addressCardHeader > .cardInfo > .cardTitle {
+    color: #1b5ac2;
+    font-weight: bold;
+}

@@ -1,0 +1,25 @@
+<!--
+    담당자 : 이승현
+    주요 기능 : 대쉬보드의 오늘 공유 일정 영역
+ -->
+<script defer src="/javascripts/dashboard/shareScheduleList.js"></script>
+<link rel="stylesheet" href="/stylesheets/dashboard/shareScheduleList.css">
+<div class="shareScheduleList_header">
+    <div class="shareScheduleHeaderLeft">
+        <i class="fa-solid fa-share"></i>
+        <h1>공유받은 오늘 일정 목록</h1>
+        <!-- <p>공유받은 일정 갯수 :</p> -->
+        <p id="shareScheduleCount"></p>
+    </div>
+    <div class="shareScheduleHeaderRight">
+        <i class="fa-solid fa-shuffle" onclick="filterMenu()"></i>
+        <div class="filterMenu">
+            <li onclick="filterReq(null)">전체</li>
+            <li onclick="filterReq(false)">진행중</li>
+            <li onclick="filterReq(true)">완료</li>
+        </div>
+    </div>
+</div>
+<div id="shareScheduleList_div" class="shareScheduleList_div">
+
+</div>

@@ -1,0 +1,102 @@
+/* 
+  담당자 : 이승현
+  주요 기능 : [일정 모달, 카테고리 모달] - 태그 영역 UI 설계 및 CSS code 작성
+*/
+.tagModal {
+    display: none;
+    z-index: 13;
+}
+.tagModal-content{
+    position: absolute;
+    width: 240px;
+    max-height: 346px;
+    overflow: auto;
+    bottom: 45px;
+    background-color: white;
+    border: solid 0.5px #a8a8a8;
+    padding: 12px;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.tag_write {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#tagInput {
+    width: 50%;
+}
+/* 해시태그 */
+.tagListDiv {
+    font-size: 1.1rem;
+    background-color: #dadbe9bd;
+    padding: 0.275rem;
+    margin: 0.275rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.tagList {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+.tagList i {
+    margin-left: 0.2rem;
+}
+.tag_wrap {
+    display: flex;
+    flex-direction: column;
+}
+/* 태그 자동완성 */
+#tagModalList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#tagModal-title {
+    border-bottom: 1px solid #ababab;
+    padding-bottom: 0.25rem;
+    margin: 0.25rem 0.25rem 0.6rem 0.25rem;
+}
+
+#tagModalList .tagDiv {
+    font-size: 0.9rem;
+    background-color: #dadbe9bd;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0.25rem;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    cursor: pointer;
+}
+.tagContent {
+    height: auto;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+/* 주소 추가 옵션 선택 시 넓어지면 해시태그 css 수정(.tagModal-content_show */
+.tagModal-content_show {
+    position: absolute;
+    width: 271px;
+    max-height: 346px;
+    overflow: auto;
+    bottom: 38px;
+    background-color: white;
+    border: solid 0.5px #a8a8a8;
+    padding: 12px;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+#tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fa-regular.fa-circle-xmark {
+    cursor: pointer;
+}

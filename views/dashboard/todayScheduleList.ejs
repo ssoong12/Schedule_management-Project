@@ -1,0 +1,36 @@
+<!--
+    담당자 : 이승현
+    주요 기능 : 드래그 앤 드랍 오늘 일정 영역
+ -->
+<script defer src="/javascripts/dashboard/todayScheduleList.js"></script>
+<link rel="stylesheet" href="/stylesheets/dashboard/todayScheduleList.css">
+<div id="todayScheduleList_content">
+  <div class="dashboard_content_header">
+    <i class="fa-regular fa-calendar-check"></i>
+    <h1 id="todayDateTag">11. 01. 화</h1>
+  </div>
+  <div class="todayScheduleList_container">
+    <!-- 진행 container -->
+    <div class="scheduleContainer" id="containerIng">
+      <div class="progress_header">
+        <div class="progress_header_head">진행 중인 일정</div>
+        <p id="ingCount" class="progress_header_count"></p>
+      </div>
+      <div class="scheduleContainer_elements" id="scheduleContainer_elements_ing" ondragover="overDrag(event, this)" >
+        <!-- drag할 element -->
+        
+      </div>
+    </div>
+    <!-- 완료 container -->
+    <div class="scheduleContainer" id="containerDone">
+      <div class="progress_header">
+        <div class="progress_header_head">완료된 일정</div>
+        <p id="doneCount" class="progress_header_count"></p>
+      </div>
+      <div class="scheduleContainer_elements" id="scheduleContainer_elements_done" ondragover="overDrag(event, this)" >
+        
+      </div>
+    </div>
+  </div>
+
+</div>

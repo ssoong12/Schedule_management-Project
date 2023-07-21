@@ -1,0 +1,111 @@
+<!-- 
+    담당자 : 이승현
+    주요 기능 : 상단 메뉴
+                1. 연동 API 구별
+                2. 이름 정보 표시
+                3. 프로필 사진 표시
+                4. 로그아웃 btn
+                5. 배경색 지정 btn
+ -->
+
+<!--==================== HEADER ====================-->
+<header class="header" id="header" style='background-color: <%= member.headerColor %>'>
+    <input id="leftColor" type="hidden" value=<%= member.headerColor %>>
+    <nav class="nav">
+        <a href="/" class="nav__logo">
+            <i class="fa-sharp fa-solid fa-calendar"></i>C&B
+        </a>
+        <input id="stateUrl" type="hidden" value="<%= url %>">
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/" class="nav__link home">대쉬보드</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/calendar" class="nav__link calendar">캘린더</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/statistics" class="nav__link statistics">태그 통계</a>
+                </li>
+            </ul>
+            <!-- 모바일 네비게이션 close 버튼 -->
+            <div class="nav__close" id="nav-close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+
+        <div class="nav__menu-login" id="nav-menu-login">
+            <ul class="nav__list nav__menu-login__ul">
+                <div class="dropdown">
+                    <div onclick="dp_userProfile()" class="userProfile">
+                        <li class="nav__item nav__menu-login__li">
+                            <img class="user_img" src="<%= member.profile %>" alt="user 프로필 사진">
+                            <a class="nav__link_active nav__menu-login__a"><%= member.name %></a>
+                            <i class="fa-solid fa-caret-down" style="font-size: 20px;"></i>
+                        </li>
+                    </div>
+                </div>
+                <!-- 상단 메뉴 사용자 지정 색깔 바꾸기 -->
+                <div class="headerColor">
+                <li class="nav__item nav__menu-login__li">
+                    <a class="nav__link_active nav__menu-login__a">
+                        <i class="fa-solid fa-palette" onclick="dp_headerColor()"></i>
+                    </a>
+                </li>
+                </div>
+                <!-- 로그인 API 정보 -->
+                <div class="login_icon">
+                    <% if(member.provider == 'naver') { %>
+                        <img src="/images/naver_icon.png" alt="네이버 아이콘">
+                    <% } else { %>
+                        <img src="/images/kakao_icon.png" alt="네이버 아이콘">
+                    <% } %>
+                </div>
+                    
+                
+            </ul>
+        </div>
+    </div>
+        
+        <div class="nav__btns">
+            <!-- 모바일 네비게이션 opne 버튼 -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="user" style="display: none;" id="drop-user-content">
+    <!-- 유저 정보 -->
+    <div class="user_info_header">
+        <p>User Profile</p>
+    </div>
+    <div class="user_info">
+        <img class="user_img_deep" src="<%= member.profile %>" alt="user 프로필 사진">
+        <div class="user_info_text">
+            <p>이름(별명) : <%= member.name %></p>
+            <p>이메일 : <%= member.email %> </p>
+        </div>
+    </div>
+    
+    <!-- 로그아웃 -->
+    <div class="user_info" onclick="location.href='/logout'">
+        <i class="fa-sharp fa-solid fa-arrow-right-from-bracket fa-xl"></i>
+        <p>로그아웃</p>
+    </div>
+</div>
+<!-- 팔레트, 사용자가 커스텀하여 헤더 색상 변경 -->
+<div class="color_change" style="display: none;" id="drop-color-content">
+    <div class="body_box">
+        <div id="box" class="box">
+            <div id="colorList">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/layout/header.js"></script>
+<script>
+
+</script>

@@ -1,0 +1,173 @@
+/* 
+  담당자 : 이승현
+  주요 기능 : [캘린더 : 카테고리] - 카테고리 모달창 UI 설계 및 CSS code 작성
+*/
+#categoryModal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.category-modal-content{
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  padding: 20px;
+  box-shadow: 0 0 10px #222222;
+  border-radius: 20px;
+  width: 25%;
+  max-width: 1200px;
+  height: auto;
+  box-sizing: content-box;
+  transition: all .4s;
+} 
+.close {
+  width: 100%;
+}
+.close_icon {
+  float: right;
+}
+.category {
+  height: 75px;
+  border-bottom: 1px solid #e1e5ec;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  font-size: var(--h3-font-size);
+}
+.category_save {
+  justify-content: center;
+  border: none;
+  margin-top: 1rem;
+}
+.category_save_btn {
+  width: 20%;
+  height: 70%;
+  background-color: #e1e5ec;
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: var(--h3-font-size);
+}
+
+
+/* 사용자 목록 */
+.category_share_user_list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.category_share_user_list_img {
+  position: relative;
+  width: 428px;
+  height: fit-content;
+  left: 10px;
+  padding: 10px 0;
+}
+.category_share_user_list_img .tooltip {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 4px;
+}
+.category_share_user_list_img .tooltip img {
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 50px;
+  height: 50px;
+}
+
+/* 사용자 목록 추가 버튼(사용자 추가 모달창 가기) */
+.category_share_user_list_add {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category_share_user_list_add:hover {
+  background-color: #dadada;
+  box-shadow: 0 0 7px black;
+  transition: all .3s;
+}
+
+/* tootip. 아이콘 hover 시 사용자 정보 보이기 */
+.tooltip {
+  display: inline-block;
+}
+.tooltip-text {
+  display: none;
+  position: absolute;
+  max-width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  background: rgb(243, 243, 243);
+  box-shadow: 0 0 5px black;
+  font: var(--body-font);
+  font-size: small;
+  z-index: 10;
+}
+
+.tooltip:hover .tooltip-text {
+  display: block;
+} 
+
+/* 공유 옵션 checkbox가 checked일 때 바뀌는 속성 */
+.category-modal-content.show {
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  border-radius: 20px;
+  width: 55%;
+  max-width: 1200px;
+  height: auto;
+  box-sizing: content-box;
+  transition: all .4s;
+}
+.category_modal_section.div { /* #category_modal_section에 추가되는 class*/
+  display: flex;
+  justify-content: space-around;
+}
+.category_modal_section {
+  width: 100%;
+}
+#category_modal_section1 {
+  max-width: 510px;
+}
+
+.category_modal_section.border{
+  border-left: 4px solid #d3d3d570;
+  padding-left: 45px;
+}
+
+#categoryColor {
+  appearance: none;
+  width: 38px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#categoryColor::-webkit-color-swatch {
+  border-radius: 50%;
+  border: none;
+}
+#categoryColor::-moz-color-swatch {
+  border-radius: 50%;
+  border: none;
+}

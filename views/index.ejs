@@ -1,0 +1,64 @@
+<!-- 
+    담당자 : 이승현, 박신욱
+    주요 기능 : 대시보드 페이지입니다.
+ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <!--================= CSS =================-->
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <link rel="stylesheet" href="/stylesheets/fontawesome-free-6.2.0-web/css/all.min.css">
+    <!--=============== JQUERY ===============-->
+    <script src="/jquery-3.6.1.min.js"></script>
+    <!--================= JS ==================-->
+    <script defer src="/javascripts/dashboard/kakaoMap.js"></script>
+    <script src="/javascripts/dashboard/scheduleAddressList.js"></script>
+    <script src="/javascripts/dashboard/memo.js"></script>
+    <script defer src="/javascripts/dashboard/memoModal.js"></script>
+    <script defer src="/javascripts/schedule/scheduleModal.js"></script>
+</head>
+<body>
+<!--=============== HEADER ===============-->
+<%- include('layout/header.ejs'); %>
+<%- include('./dashboard/memoModal.ejs') %>
+<%- include('./schedule/scheduleModal.ejs') %>
+<!-- <h1>홈</h1> -->
+<div class="dashboardPage">
+    <div class="topDashboard">
+        <!-- 오늘 일정 완료율 -->
+        <div class="todayScheduleChart">
+            <%- include('dashboard/todayScheduleChart.ejs'); %>
+        </div>
+        <!-- 오늘 일정 리스트(진행/완료 상태 표시bar) -->
+        <div class="todayScheduleList">
+            <%- include('dashboard/todayScheduleList.ejs'); %>
+        </div>
+        <!-- 공유받은 일정 리스트 -->
+        <div class="shareScheduleList">
+            <%- include('dashboard/shareScheduleList.ejs'); %>
+        </div>
+    </div>
+    <!-- 추가 기능: 오늘 가야 할 곳 표시 영역 -->
+    <div class="bottomDashboard">
+        <!-- 메모 -->
+        <div class="myMemo">
+            <%- include('dashboard/myMemo.ejs'); %>
+        </div>
+        <!-- 가야 할 곳 표시(리스트) -->
+        <div class="scheduleAddressList">
+            <%- include('dashboard/scheduleAddressList.ejs'); %>
+        </div>
+        <!-- 가야 할 곳 표시(지도) -->
+        <div class="scheduleAddress">
+            <%- include('dashboard/scheduleAddress.ejs'); %>
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>

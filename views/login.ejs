@@ -1,0 +1,50 @@
+<!-- 
+    담당자 : 이승현
+    주요 기능 : 로그인 페이지입니다.
+ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <!--================= CSS =================-->
+    <link rel='stylesheet' href='/stylesheets/login.css'/>
+    <!--=============== JQUERY ===============-->
+    <script src="/jquery-3.6.1.min.js"></script>
+    <!--================= JS ==================-->
+    <script src="/javascripts/login.js"></script>
+</head>
+<body>
+<h1 class="hidden">로그인 페이지</h1>
+<div class="login_section">
+    <div class="login_image">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/login_img1.jpg" alt="Photo1" style="border-radius: 20px;"/>
+            </div>
+            <div class="slide">
+                <img src="images/login_img2.jpg" alt="Photo2" style="border-radius: 20px;"/>
+            </div> 
+            <div class="slide">
+                <img src="images/login_img3.jpg" alt="Photo3" style="border-radius: 20px;"/>
+            </div>
+           
+            <div class="dots-container">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+            </div>
+            
+        </div>
+    </div>
+    <div class="login">
+        <div class="naver" onclick="location.href='/login/naver'">
+        </div>
+        <div class="kakao" onclick="location.href='/login/kakao'">
+        </div>
+    </div>
+</div>
+</body>
+</html>

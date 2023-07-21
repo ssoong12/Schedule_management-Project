@@ -1,0 +1,23 @@
+<!--
+    담당자 : 박신욱, 이승현
+    주요 기능 : 카테고리영역의 나의 카테고리 영역
+ -->
+<link rel='stylesheet' href="/stylesheets/calendar/category/categoryArea.css"/>
+<div class="option_category">
+    <span class="option_category_me">나의 카테고리</span>
+</div>
+<div id="myCategoryList" class="myCategoryList">
+    <% myCategory.map((data)=>{ %>
+        <div class="categoryList" onclick="shareCategorySearch('<%= data._id %>', '<%= data.memberId._id %>')">
+            <div class="myCategoryList_before" style="background-color: <%= data.color %>"></div>
+            <div class="categoryList_div">
+                <p><%= data.name %></p>
+                <div class="categoryIcon">
+                    <i onclick="categoryEditModalOpen('<%= data._id %>')" class="fa-regular fa-pen-to-square"></i>
+                    <i class="fa-regular fa-trash-can"
+                       onclick="categoryDelete('<%= data._id %>', '<%= data.name %>')"></i>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>

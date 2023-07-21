@@ -1,0 +1,25 @@
+<!--
+    담당자 : 이승현
+    주요 기능 : 카테고리 생성시 열리는 공유 사용자 영역
+ -->
+<link rel='stylesheet' href='/stylesheets/calendar/category/userShareModal.css'/>
+<script defer src="/javascripts/calendar/category/userShareModal.js"></script>
+<!-- 나의 정보 -->
+<div class="user_share user_share_me">
+  <div class="user_share_img">
+    <img src="<%= member.profile %>">
+  </div>
+  <div class="user_share_info">
+    <p class="user_share_info_name"><%= member.name %></p>
+    <p class="user_share_info_email"><%= member.email %></p>
+  </div>
+</div>
+<!-- 사용자 검색란 -->
+<div class="user_share user_share_search">
+  <input id="userSearchText" onkeyup="userSearchKeyUp()" type="text" class="user_share_search_text" placeholder="검색어 입력">
+  <button class="user_share_search_btn" onclick="userSearch()">검색</button>
+</div>
+<!-- 사용자 리스트(목록) -->
+<div class="user_share_userList_all" id="userListDiv">
+
+</div>

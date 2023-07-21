@@ -1,0 +1,18 @@
+<!--
+    담당자 : 박신욱, 이승현
+    주요 기능 : 카테고리 영역의 나의 일정 영역
+ -->
+<div class="option_schedule">
+    <span class="option_schedule_me">나의 일정</span>
+</div>
+<div class="myScheduleSearchArea">
+    <input id="myScheduleSearch" onkeyup="scheduleSearch(this)" type="text" placeholder="일정 검색">
+    <i id="searchReload" class="fa-solid fa-rotate-right" onclick="searchReload()"></i>
+</div>
+<div id="myScheduleList" class="myScheduleList_class">
+    <% mySchedule.map((data)=>{ %>
+        <div class="myScheduleList" onclick="scheduleViewModalOpen('<%= data._id %>')">
+            <p><%= data.title.length > 15 ? data.title.substr(0, 15) + '...' : data.title %></p>
+        </div>
+    <% }) %>
+</div>

@@ -1,0 +1,28 @@
+<!--
+    담당자 : 박신욱
+    주요 기능 : 대쉬보드의 메모 영역.
+ -->
+<link rel="stylesheet" href="/stylesheets/dashboard/myMemo.css">
+<div class="myMemoList">
+    <div class="myMemoHeader">
+        <div class="myMemoLeft">
+            <i class="fa-regular fa-bookmark"></i> <p class="myMemoTitle">메모</p>
+        </div>
+        <div class="myMemoRight">
+            <i class="fa-solid fa-filter" onclick="sortMenu()"></i>
+            <div class="sortMenu">
+                <li onclick="sort('desc')">최신순 <i class="fa-solid fa-sort-up"></i></li>
+                <li onclick="sort('asc')">마지막순 <i class="fa-solid fa-sort-down"></i></li>
+            </div>
+        </div>
+    </div>
+    <div id="myMemoContent" class="myMemoContent">
+        <div class="myMemoContentHeader">
+            <i class="fa-solid fa-plus"></i>
+            <input id="memoAdd" onkeyup="addMemo(this)" type="text" placeholder="할 일을 추가해주세요.">
+        </div>
+        <div id="memoList" class="memoList">
+
+        </div>
+    </div>
+</div>

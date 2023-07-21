@@ -1,0 +1,122 @@
+/* 
+  담당자 : 이승현
+  주요 기능 : [캘린더] - 캘린더 페이지 UI 설계 및 CSS code 작성
+*/
+#calendar_section {
+  display: flex;
+}
+#calendar_section1 {
+  background-color: #fbfbfb;
+  width: 94.6%;
+  height: 94vh;
+  padding: 0 32px;
+  border-right: 2px solid #e9e9e9;
+}
+.plus {
+  position: relative;
+  max-width: 17rem;
+  top: 2rem;
+  margin: 0 auto;
+  font-size: 19px;
+  border-radius: 50px;
+  width: 100%;
+  max-height: 73px;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 7px #5a5a5a;
+  justify-content: space-evenly;
+}
+.plus:hover {
+  cursor: pointer;
+  background-color: #e8e8eb;
+  box-shadow: 0 5px 20px #5a5a5a;
+  transition: all 0.3s;
+}
+#plus_menu {
+  position: absolute;
+  left: 9.25%;
+  top: 102.5%;
+  background-color: #fff;
+  max-width: 14rem;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 7px #5a5a5a;
+  z-index: 1;
+}
+.plus_menu_schedule, .plus_menu_category {
+  display: flex;
+  width: auto;
+  height: 4rem;
+  font-size: 1rem;
+  align-items: center;
+  column-gap: 0.5rem;
+  justify-content: center;
+}
+.plus_menu_schedule:hover, .plus_menu_category:hover {
+  cursor: pointer;
+  background-color: #e9e9e9;
+}
+.plus_menu_schedule:hover {
+  border-radius: 10px 10px 0 0;
+}
+.plus_menu_category:hover {
+  border-radius: 0 0 10px 10px;
+}
+#calendar_section2 {
+  background-color: var(--body-color);
+  width: 85%;
+  height: 94vh;
+}
+
+
+/* 사이드바 토글 */
+.sidebar {
+  height: 100%; 
+  width: 27.7%;
+  position: relative; 
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fbfbfb;
+  border: 2px solid #e9e9e9;
+  color: #999999;
+  padding: 21px 2px;
+  position: absolute;
+  top: 450px;
+  left: 23.2%;
+  transition: 0.3s;
+
+}
+#openbtn_i {
+  transform: rotate(180deg);
+}
+
+.openbtn:hover {
+  background-color: #e9e9e9;
+  color: #696969;
+  z-index: 1;
+}

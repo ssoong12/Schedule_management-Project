@@ -1,0 +1,88 @@
+<!--
+    담당자 : 이승현
+    주요 기능 : 카테고리 생성 및 편집 모달창
+ -->
+<link rel='stylesheet' href='/stylesheets/calendar/category/categoryModal.css'/>
+<script defer src="/javascripts/calendar/category/categoryModal.js"></script>
+<div id="categoryModal" class="category-modal">
+    <div class="category-modal-content">
+        <!-- 닫기 버튼 -->
+        <span class="close" onclick='categoryModalDone()'>
+            <i class="fa-regular fa-circle-xmark fa-xl close_icon" ></i>
+        </span>
+        <h3 class="hidden">카테고리 모달</h3>
+        <div id="category_modal_section" class="category_modal_section">
+            <div id="category_modal_section1" class="category_modal_section">
+                <!-- 카테고리 제목 -->
+                <div class="category category_title">
+                    <label for="category_title">
+                        <i class="fa-sharp fa-solid fa-plus fa-lg category_title_icon"></i>
+                    </label>
+                    <input type="text" id="category_title" name="category_title" placeholder="카테고리 제목을 입력해 주세요."/>
+                </div>
+                <!-- 태그 입력란 -->
+                <div class="category tagContent">
+                    <label for="category_tag">
+                        <i class="fa-sharp fa-solid fa-hashtag fa-lg"></i>
+                    </label>
+                    <!-- *** 확인 요망! 영역만 잡아 놓았습니다. 아직 기능 실행이 되는 상태는 아닙니다. *** -->
+                    <div class="tag_wrap">
+                        <%- include('./tagModal.ejs') %>
+                        <div class="tag_write">
+                            <div class="tagList_div">
+                                <div id="categoryTagDivList">
+        
+                                </div>
+                            </div>
+                            <input type="text" id="categoryTagInput" placeholder="#해시태그"
+                                   oninput="categoryTagInput(this)"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- 색상 설정란 -->
+                <div class="category colorContent">
+                    <label for="category_color">
+                        <i class="fa-solid fa-paintbrush"></i>
+                    </label>
+                    <div class="color_wrap">
+                        <input id="categoryColor" type="color">
+                    </div>
+                </div>
+                <!-- 공유 옵션 -->
+                <div class="category checkShareUser">
+                    <!-- checkbox 커스텀하기! check가 true일 땐 이 이미지, false일땐 저 이미지 -->
+                    <input type="checkbox" id="category_share_q" name="category_share_q" onchange="share_user()"/>
+                    <label for="category_share_q">공유자를 추가하시겠습니까?</label>
+                </div>
+                <!-- 옵션 checked일 때 보이는 공유자 list, 공유자 추가 btn -->
+                <div id="checkShareUser_list" style="display: none;">
+                    <div class="category" style="height: fit-content; min-height: 75px;">
+                        <label for="category_share_user">
+                            <i class="fa-regular fa-user fa-lg"></i>
+                        </label>
+                        <div class="category_share_user_list">
+                            <div class="category_share_user_list_add" id="category_share_user_list_add" onclick="extendsUserList()">
+                                <i class="fa-regular fa-plus"></i>
+                            </div>
+                            <div class="category_share_user_list_img" id="category_share_user">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="category_modal_section2" style="display: none;" class="category_modal_section">
+                <!-- 공유자 추가 btn 눌렀을 때, 사용자 목록 -->
+                <div>
+                    <%- include('./userShareModal.ejs') %>
+                </div>
+            </div>
+        </div>
+        <!-- 저장 btn -->
+        <div class="category category_save">
+            <button class="category_save_btn" onclick="submitCategory('post')">등록</button>
+        </div>
+
+    </div>
+</div>
